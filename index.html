@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script>
+    function onSubmit(token) {
+      document.getElementById("contact-form").submit();
+    }
+  </script>
+ 
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300&family=Comfortaa&display=swap" rel="stylesheet"> 
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Contact us</h1>
+    <p>If you have any questions, you can reach out to us</p>
+    <form action="index.php", method="post">
+      <label for="First name">First name</label>
+      <input type="text" name="First Name" id="firs t-name">
+      <label for="Last name">Last name</label>
+      <input type="text" name="Last Name" id="nlast-ame">
+      <label for="email">email</label>
+      <input type="email" name="email" id="email">
+      <label for="phone">phone number</label>
+      <div class="phone_number_input">
+        <select id="country-code" name="country-code">
+          <option value="+1">🇺🇸 +1</option>
+          <option value="+33">🇫🇷 +33</option>
+          <option value="+44">🇬🇧 +44</option>
+          <option value="+81">🇯🇵 +81</option>
+          <option value="+91">🇮🇳 +91</option>
+        </select>
+        <input type="text" id="phone" name="phone">
+
+
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+      
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+
+
+        <label for="additional-info">Additional Information:</label>
+        <textarea id="additional-info" name="additional-info"></textarea>
+
+      </div>
+       
+
+      <button class="g-recaptcha" 
+        data-sitekey="6LfojnMkAAAAAIVtN4A138VS5AGfmv6qYxgH7oDo" 
+        data-callback='onSubmit' 
+        data-action='submit'>Submit</button>
+
+    </form>
+    
+    
+  </div>
+</body>
+</html>
