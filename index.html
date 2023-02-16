@@ -20,44 +20,48 @@
 <body>
   <div class="container">
     <h1>Contact us</h1>
-    <p>If you have any questions, you can reach out to us</p>
     <form action="index.php", method="post">
-      <label for="First name">First name</label>
-      <input type="text" name="First Name" id="firs t-name">
-      <label for="Last name">Last name</label>
-      <input type="text" name="Last Name" id="nlast-ame">
-      <label for="email">email</label>
-      <input type="email" name="email" id="email">
-      <label for="phone">phone number</label>
-      <div class="phone_number_input">
-        <select id="country-code" name="country-code">
-          <option value="+1">🇺🇸 +1</option>
-          <option value="+33">🇫🇷 +33</option>
-          <option value="+44">🇬🇧 +44</option>
-          <option value="+81">🇯🇵 +81</option>
-          <option value="+91">🇮🇳 +91</option>
+      <input class="input"  placeholder="First name" type="text" name="First Name" id="first-name">
+      <input class="input" placeholder="Last name" type="text" name="Last Name" id="nlast-ame">
+      <input class="input" placeholder="Email" type="email" name="email" id="email">
+
+      <div style="display: flex; ">
+
+        <select style="width: 1px; flex-grow: 1; margin-right: 20px;" class="input" id="country-code" name="country-code">
+          <option value="+1">🇺🇸+1</option>
+          <option value="+33">🇫🇷+33</option>
+          <option value="+44">🇬🇧+44</option>
+          <option value="+81">🇯🇵+81</option>
+          <option value="+91">🇮🇳+91</option>
         </select>
-        <input type="text" id="phone" name="phone">
-
-
-        <input type="radio" id="male" name="gender" value="male">
-        <label for="male">Male</label>
-      
-        <input type="radio" id="female" name="gender" value="female">
-        <label for="female">Female</label>
-
-
-        <label for="additional-info">Additional Information:</label>
-        <textarea id="additional-info" name="additional-info"></textarea>
-
+        <input style="flex-grow: 5;" placeholder="Phone" class="input" type="number" id="phone" name="phone">
       </div>
+
+        <textarea class="input" placeholder="Additional Info" id="additional-info" name="additional-info"></textarea>
+
+
+        <div class="radio">
+          <input type="radio" id="male" name="gender" value="male" checked>
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="male" class="gender male">
+            <div class="dot"></div>
+             <span>male</span>
+             </label>
+          <label for="female" class="gender female">
+            <div class="dot"></div>
+             <span>female</span>
+          </label>
+        </div>
+      
+
        
 
-      <button class="g-recaptcha" 
-        data-sitekey="6LfojnMkAAAAAIVtN4A138VS5AGfmv6qYxgH7oDo" 
-        data-callback='onSubmit' 
-        data-action='submit'>Submit</button>
-
+  
+       <button type="submit" 
+          data-sitekey="6LfojnMkAAAAAIVtN4A138VS5AGfmv6qYxgH7oDo" 
+          data-callback='onSubmit'
+          data-action="submit"
+       >Submit</button>
     </form>
     
     

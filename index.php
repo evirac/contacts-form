@@ -1,26 +1,27 @@
 <?php
+
 $first_name = $_POST['first-name'];
 $last_name = $_POST['last-name'];
 $email = $_POST['email'];
 $country_code = $_POST['country-code'];
 $phone = $_POST['phone'];
-$additional_information = $_POST['additional-info']
+$additional_information = $_POST['additional-info'];
+$gender = $_POST['gender'];
 
 
-$sender = "From:".$first_name." " .$last_name."<".$email.">\r\n"
-$subject = $first_name." wants to contact you";
-
-$recipient = "ayushguptanew2@gmail.com ";
+ $sender = "From:".$first_name." " .$last_name."<".$email.">\r\n";
+ $subject = $first_name." wants to contact you";
+ $recipient = "ayushguptanew2@gmail.com ";
 
 
 mail($recipient,$subject,$additional_information,$sender)
-or die("error: could not send mail. Try again")
+or die("error: could not send mail. Try again");
 
 
 echo('
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300&family=Comfortaa&display=swap" rel="stylesheet"> 

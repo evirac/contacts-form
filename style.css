@@ -1,86 +1,153 @@
-*{
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One&display=swap");
+* {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-body{
-  background: #1b1c1e;
-  text-align: center;
+body {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-2210775-jpeg.jpg") center center no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
 }
 
-h1{
-  font-family: 'Catamaran', cursive;
-  color: white;
-  font-size: 60px;
-  font-weight: 600;
+
+.container {
+  background: #f8f4e5;
+  padding: 50px 100px;
+  border: 2px solid black;
+  box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px black;
 }
 
-p{color: whitesmoke;}
-
-p,input,label,textarea, button{
-  font-family: Comfortaa;
+.input {
+  display: block;
+  width: 100%;
+  font-size: 14pt;
+  line-height: 28pt;
+  font-family: "Fjalla One";
+  margin-bottom: 28pt;
+  border: none;
+  border-bottom: 5px solid black;
+  background: #f8f4e5;
+  min-width: 250px;
+  padding-left: 5px;
+  outline: none;
+  color: black;
 }
 
-input, textarea, label, button{
-  color: beige;
+.input:focus {
+  border-bottom: 5px solid #ffa580;
+}
+
+
+
+button {
   display: block;
   margin: 0 auto;
+  line-height: 28pt;
+  padding: 0 20px;
+  background: #ffa580;
+  letter-spacing: 2px;
+  transition: 0.2s all ease-in-out;
+  outline: none;
+  border: 1px solid black;
+  box-shadow: 3px 3px 1px 1px #95a4ff, 3px 3px 1px 2px black;
+}
+button:hover {
+  background: black;
+  color: white;
+  border: 1px solid black;
+}
+
+::selection {
+  background: #ffc8ff;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  border-bottom: 5px solid #95a4ff;
+  -webkit-text-fill-color: #2A293E;
+  -webkit-box-shadow: 0 0 0px 1000px #f8f4e5 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* radio buttons */
+.radio{
+  display: inline-flex;
+  background: #f8f4e5;
+  height: 100;
+  width: 150;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  padding: 20px 15px;
+}
+.radio .gender{
+  background: transparent;
+  height: 100%;
   width: 100%;
-}
-
-input, textarea{
-  background-color: transparent;
-  border: 0;
-  border-bottom: 2px soljid beige;
-
-
-  color: whitesmoke;
-  font-size: 18px;
-  padding: 10px;
-
-}
-
-input:focus, textarea:focus{
-  outline: 1px solid beige ;
-}
-
-.container{
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 5%;
-}
-
-form{
-  max-width: 500px;
-  margin: 0 auto;
-  text-align: left;
-  padding: 20px 0;
-}
-
-.g-recaptcha{
-  background-color: darkgrey;
-  padding: 15px 0;
-  color: oldlace;
-  font-weight: bolder;
-  font-size: 18px;
-  border-bottom: none;
-  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 10px;
+  border-radius: 5px;
   cursor: pointer;
-
-  transition: all .5s ease;
+  padding: 0 10px;
+  border: 2px solid black;
+  transition: all 0.3s ease;
+}
+.radio .gender .dot{
+  height: 20px;
+  width: 20px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  position: relative;
+}
+.radio .gender .dot::before{
+  position: absolute;
+  content: "";
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  background: #00d998;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(1.5);
+  transition: all 0.3s ease;
+}
+input[type="radio"]{
+  display: none;
+}
+#male:checked:checked ~ .male{
+  border-color: black;
+  background: #95a4ff;
 }
 
-.g-recaptcha:hover{
-background-color: oldlace;
-color: #1b1c1e;
+#female:checked:checked ~ .female{
+  border-color: black;
+  background: #ffa580;
+}
+#male:checked:checked ~ .male .dot,
+#female:checked:checked ~ .female .dot{
+  background: #fff;
+}
+#male:checked:checked ~ .male .dot::before,
+#female:checked:checked ~ .female .dot::before{
+  opacity: 1;
+  transform: scale(1);
+}
+.radio .gender span{
+  font-size: 20px;
+  color: black;
+}
+#male:checked:checked ~ .male span,
+#female:checked:checked ~ .female span{
+  color: #fff;
 }
 
 
-a{
-  color: darkgrey;
-  font-style: italic;
-}
-a:hover{
-  color: oldlace;
-}
